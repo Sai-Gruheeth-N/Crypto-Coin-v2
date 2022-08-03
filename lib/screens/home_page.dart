@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:travancode_flutter_assignment/appBar/coinpage_appbar.dart';
 import 'package:travancode_flutter_assignment/widgets/create_card.dart';
 import 'package:travancode_flutter_assignment/data/api_data.dart';
 import 'package:http/http.dart' as http;
@@ -19,6 +18,7 @@ List<CoinAPIData> coinData = [];
 class _HomePageState extends State<HomePage> {
   Future<List<CoinAPIData>> getCoinData() async {
     http.Response response = await http.get(Uri.parse(coinGeckoAPIurl));
+    print(response.statusCode);
     if (response.statusCode == 200) {
       List<dynamic> values = [];
       values = json.decode(response.body);
