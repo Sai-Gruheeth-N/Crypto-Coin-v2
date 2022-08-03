@@ -65,7 +65,9 @@ class _HomePageState extends State<HomePage> {
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
-            setState(() {});
+            setState(() {
+              getCoinData();
+            });
           },
           child: Icon(
             Icons.refresh,
