@@ -17,20 +17,21 @@ class MainAppBar extends StatelessWidget with PreferredSizeWidget {
           fontWeight: FontWeight.bold,
         ),
       ),
-      leading: Padding(
-        padding: const EdgeInsets.all(5.0),
-        child: IconButton(
-          onPressed: () {},
-          icon: const Icon(
-            Icons.account_circle,
-            color: Colors.teal,
-            size: 30,
-          ),
-        ),
-      ),
     );
   }
 
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }
+
+// leading: Padding(
+//   padding: const EdgeInsets.all(5.0),
+//   child: IconButton(
+//     onPressed: () {},
+//     icon: const Icon(
+//       Icons.account_circle,
+//       color: Colors.teal,
+//       size: 30,
+//     ),
+//   ),
+// ),
