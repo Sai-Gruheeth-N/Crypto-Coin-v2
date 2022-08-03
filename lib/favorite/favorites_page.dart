@@ -19,34 +19,44 @@ class _FavoritesPageState extends State<FavoritesPage> {
     setState(() {
       favorites = favCoins.toSet().toList();
     });
-    return SafeArea(
-      child: Scaffold(
-        body: ListView.builder(
-          itemCount: favorites.length,
-          itemBuilder: (context, index) {
-            return CreateCard(
-              name: favorites[index].name,
-              symbol: favorites[index].symbol,
-              logo: favorites[index].logo,
-              price: favorites[index].price.toString(),
-              marketCap: favorites[index].marketCap.toString(),
-              priceChangePercentage24h:
-                  favorites[index].priceChangePercentage24h.toString(),
-              heart: favorites[index].heart,
-            );
-          },
-        ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            setState(() {});
-          },
-          child: Icon(
-            Icons.refresh,
-            color: Colors.grey[850],
-            size: 30.0,
+    if (favorites.isEmpty) {
+      return const SafeArea(
+        child: Scaffold(
+          body: Center(
+            child: Text('No favorite coins.'),
           ),
         ),
-      ),
-    );
+      );
+    } else {
+      return SafeArea(
+        child: Scaffold(
+          body: ListView.builder(
+            itemCount: favorites.length,
+            itemBuilder: (context, index) {
+              return CreateCard(
+                name: favorites[index].name,
+                symbol: favorites[index].symbol,
+                logo: favorites[index].logo,
+                price: favorites[index].price.toString(),
+                marketCap: favorites[index].marketCap.toString(),
+                priceChangePercentage24h:
+                    favorites[index].priceChangePercentage24h.toString(),
+                heart: favorites[index].heart,
+              );
+            },
+          ),
+          floatingActionButton: FloatingActionButton(
+            onPressed: () {
+              setState(() {});
+            },
+            child: Icon(
+              Icons.refresh,
+              color: Colors.grey[850],
+              size: 30.0,
+            ),
+          ),
+        ),
+      );
+    }
   }
 }
