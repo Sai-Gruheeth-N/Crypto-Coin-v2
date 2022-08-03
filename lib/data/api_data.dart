@@ -30,5 +30,3 @@ class CoinAPIData {
     );
   }
 }
-
-// List<CoinAPIData> coinData = [];

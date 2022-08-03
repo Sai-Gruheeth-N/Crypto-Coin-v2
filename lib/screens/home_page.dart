@@ -79,38 +79,3 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-
-// Future<List<CoinAPIData>> getCoinData() async {
-//   List<CoinAPIData> coinList = [];
-//   var url = coinGeckoAPIurl;
-//   NetworkHelper networkHelper = NetworkHelper(url);
-//   var coinData = await networkHelper.getData();
-//   if (coinData.length > 0) {
-//     for (int index = 0; index < coinData.length; index++) {
-//       if (coinData[index] != null) {
-//         Map<String, dynamic> coin = coinData[index];
-//         coinList.add(CoinAPIData.fromJson(coin));
-//       }
-//     }
-//     // print(coinList.first.name);
-//     // print(coinList.last.name);
-//     return coinList;
-//   } else {
-//     throw Exception('ERROR : Check getCoinData()');
-//   }
-// }
-
-// FutureBuilder(
-//         builder: (context, snapshot) {
-//           return ListView.builder(
-//             itemCount: 5,
-//             itemBuilder: ((context, index) {
-//               return CreateCard(
-//                   name: 'Bitcoin',
-//                   symbol: 'BTC',
-//                   logo:
-//                       'https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579');
-//             }),
-//           );
-//         },
-//       ),
